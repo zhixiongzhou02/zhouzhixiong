@@ -5,7 +5,7 @@
 ## 在线访问
 
 - 在线简历主页：
-  [https://zhixiongzhou02.github.io/zhouzhixiong/](https://zhixiongzhou02.github.io/zhouzhixiong/)
+  [https://zhixiongzhou02.github.io/](https://zhixiongzhou02.github.io/)
 
 ## 仓库内容
 
