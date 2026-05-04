@@ -4,7 +4,8 @@
 
 ## 在线访问
 
-- GitHub Pages 启用后，可通过仓库对应的 Pages 地址访问
+- 在线简历主页：
+  [https://zhixiongzhou02.github.io/zhouzhixiong/](https://zhixiongzhou02.github.io/zhouzhixiong/)
 
 ## 仓库内容
 
