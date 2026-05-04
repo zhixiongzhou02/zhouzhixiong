@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>周志雄 | 个人简历</title>
+  <meta name="description" content="周志雄个人简历｜17年后端与平台研发经验｜AI应用工程师 / Agent平台方向">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0b1020;
+      --bg-secondary: #11182b;
+      --bg-card: rgba(19, 28, 48, 0.88);
+      --bg-elevated: rgba(25, 36, 62, 0.92);
+      --text-primary: #eef4ff;
+      --text-secondary: #b1bfd8;
+      --text-tertiary: #7f8ca7;
+      --accent-blue: #58a6ff;
+      --accent-cyan: #4dd0e1;
+      --accent-green: #34d399;
+      --accent-orange: #f59e0b;
+      --accent-pink: #f472b6;
+      --gradient-primary: linear-gradient(135deg, #58a6ff, #7c5cff);
+      --gradient-secondary: linear-gradient(135deg, #34d399, #4dd0e1);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(255, 255, 255, 0.14);
+      --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+      --font-sans: "Inter", "Noto Sans SC", -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      color: var(--text-primary);
+      background:
+        radial-gradient(circle at top right, rgba(88,166,255,0.18), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(52,211,153,0.14), transparent 30%),
+        linear-gradient(180deg, #09101d 0%, #0d1424 45%, #0a1020 100%);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+
+    .floating-nav {
+      position: sticky;
+      top: 16px;
+      z-index: 20;
+      width: fit-content;
+      margin: 20px auto 0;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      background: rgba(12, 18, 33, 0.72);
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(18px);
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-lg);
+    }
+    .nav-logo {
+      padding: 8px 14px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      padding: 8px 14px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-radius: var(--radius-full);
+    }
+    .nav-links a:hover { background: rgba(255,255,255,0.06); color: var(--text-primary); }
+
+    .hero {
+      min-height: 72vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(circle at center, black 26%, transparent 75%);
+      -webkit-mask-image: radial-gradient(circle at center, black 26%, transparent 75%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 48px 0 64px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(88,166,255,0.22);
+      background: rgba(88,166,255,0.10);
+      color: #b9d8ff;
+      font-size: 13px;
+      margin-bottom: 28px;
+    }
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-green);
+      box-shadow: 0 0 0 6px rgba(52,211,153,0.12);
+    }
+    .hero-title {
+      margin: 0 0 18px;
+      font-size: clamp(42px, 8vw, 88px);
+      line-height: 1.04;
+      letter-spacing: -2px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #ffffff 0%, #9ccaff 38%, #6ccdfc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-subtitle {
+      margin: 0 auto 18px;
+      max-width: 920px;
+      color: var(--text-secondary);
+      font-size: clamp(18px, 2.3vw, 24px);
+    }
+    .hero-summary {
+      max-width: 900px;
+      margin: 0 auto 32px;
+      color: var(--text-secondary);
+      font-size: 16px;
+    }
+    .hero-contact {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+    .hero-contact span {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 14px;
+      border-radius: var(--radius-full);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      font-size: 13px;
+    }
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: var(--radius-full);
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid transparent;
+    }
+    .btn-primary {
+      color: #fff;
+      background: var(--gradient-primary);
+      box-shadow: 0 10px 30px rgba(88,166,255,0.24);
+    }
+    .btn-secondary {
+      color: var(--text-primary);
+      background: rgba(255,255,255,0.06);
+      border-color: var(--border-subtle);
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .stat-item {
+      padding: 22px 16px;
+      background: rgba(18, 26, 46, 0.76);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+    }
+    .stat-number {
+      display: block;
+      font-size: 28px;
+      font-weight: 900;
+      color: #fff;
+    }
+    .stat-label {
+      display: block;
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section { padding: 96px 0; }
+    .section-dark { background: rgba(7, 12, 24, 0.52); }
+    .section-header {
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .section-tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      background: rgba(88,166,255,0.10);
+      color: #8fc2ff;
+      border: 1px solid rgba(88,166,255,0.16);
+      font-size: 12px;
+      font-family: var(--font-mono);
+      letter-spacing: 1px;
+    }
+    .section-title {
+      margin: 0;
+      font-size: clamp(28px, 5vw, 44px);
+      line-height: 1.15;
+    }
+    .section-desc {
+      max-width: 820px;
+      margin: 14px auto 0;
+      color: var(--text-secondary);
+    }
+
+    .about-grid {
+      display: grid;
+      gap: 24px;
+    }
+    .about-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+    .about-intro {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 28px;
+      padding: 34px;
+    }
+    .about-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 32px;
+      background: linear-gradient(135deg, rgba(88,166,255,0.24), rgba(77,208,225,0.10));
+      display: grid;
+      place-items: center;
+      font-size: 42px;
+      font-weight: 900;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .about-text h3 {
+      margin: 0 0 14px;
+      font-size: 28px;
+    }
+    .about-text p {
+      margin: 0 0 12px;
+      color: var(--text-secondary);
+    }
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .tag {
+      padding: 8px 14px;
+      font-size: 13px;
+      border-radius: var(--radius-full);
+      background: rgba(255,255,255,0.05);
+      color: #c7dbff;
+      border: 1px solid var(--border-subtle);
+    }
+    .about-cards-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+    }
+    .mini-card {
+      padding: 28px;
+    }
+    .mini-card h4 {
+      margin: 0 0 14px;
+      font-size: 18px;
+    }
+    .mini-card p, .mini-card li {
+      color: var(--text-secondary);
+      margin: 0 0 10px;
+    }
+    .mini-card ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .skill-category {
+      padding: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+    }
+    .skill-category h3 {
+      margin: 0 0 16px;
+      font-size: 18px;
+    }
+    .skill-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skill-chip {
+      padding: 8px 12px;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      border: 1px solid;
+    }
+    .skill-chip.expert {
+      color: #9fd0ff;
+      background: rgba(88,166,255,0.10);
+      border-color: rgba(88,166,255,0.18);
+    }
+    .skill-chip.pro {
+      color: #bcaeff;
+      background: rgba(124,92,255,0.10);
+      border-color: rgba(124,92,255,0.18);
+    }
+    .skill-chip.good {
+      color: #96ede0;
+      background: rgba(77,208,225,0.10);
+      border-color: rgba(77,208,225,0.18);
+    }
+
+    .timeline-grid {
+      display: grid;
+      gap: 18px;
+    }
+    .timeline-card {
+      padding: 24px 26px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+    }
+    .timeline-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .timeline-title {
+      font-weight: 800;
+      font-size: 18px;
+    }
+    .timeline-date {
+      color: var(--accent-orange);
+      font-size: 13px;
+      font-family: var(--font-mono);
+      white-space: nowrap;
+    }
+    .timeline-card p {
+      margin: 0;
+      color: var(--text-secondary);
+    }
+
+    .project-featured,
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 28px;
+      box-shadow: var(--shadow-lg);
+    }
+    .project-featured {
+      padding: 36px;
+      margin-bottom: 28px;
+    }
+    .project-badge {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 7px 14px;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      color: #ffd08a;
+      background: rgba(245,158,11,0.12);
+      border: 1px solid rgba(245,158,11,0.2);
+    }
+    .project-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+    .project-head h3 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1.2;
+    }
+    .project-meta {
+      color: var(--text-tertiary);
+      font-size: 13px;
+      font-family: var(--font-mono);
+    }
+    .project-role {
+      color: var(--accent-cyan);
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .project-summary {
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .highlight-item {
+      padding: 16px 12px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      text-align: center;
+    }
+    .highlight-item strong {
+      display: block;
+      font-size: 24px;
+      color: #fff;
+    }
+    .highlight-item span {
+      display: block;
+      margin-top: 6px;
+      color: var(--text-tertiary);
+      font-size: 12px;
+    }
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .project-tech span {
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-subtle);
+      background: rgba(255,255,255,0.04);
+      color: var(--text-secondary);
+      font-size: 12px;
+      font-family: var(--font-mono);
+    }
+    .project-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .detail-card {
+      padding: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+    }
+    .detail-card h4 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      color: #fff;
+    }
+    .detail-card p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+    .project-card {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card h3 {
+      margin: 0 0 8px;
+      font-size: 24px;
+    }
+    .project-card .project-meta {
+      margin-bottom: 14px;
+    }
+    .project-card .project-summary {
+      margin-bottom: 14px;
+    }
+    .project-card p {
+      margin: 0 0 14px;
+      color: var(--text-secondary);
+    }
+    .project-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text-secondary);
+    }
+    .project-card li + li { margin-top: 10px; }
+    .project-card li::marker { color: var(--accent-blue); }
+
+    .contact-card {
+      padding: 34px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-strong);
+      border-radius: 28px;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+    }
+    .contact-card h3 {
+      margin: 0 0 12px;
+      font-size: 28px;
+    }
+    .contact-card p {
+      margin: 0 auto 22px;
+      max-width: 760px;
+      color: var(--text-secondary);
+    }
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .contact-links span {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 16px;
+      border-radius: var(--radius-full);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    .footer {
+      padding: 28px 0 48px;
+      text-align: center;
+      color: var(--text-tertiary);
+      font-size: 13px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-stats,
+      .highlight-grid,
+      .skills-grid,
+      .about-cards-row,
+      .project-grid,
+      .resume-summary,
+      .project-details {
+        grid-template-columns: 1fr 1fr;
+      }
+      .about-intro { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      .container { width: min(100% - 24px, 1180px); }
+      .hero-stats,
+      .highlight-grid,
+      .skills-grid,
+      .about-cards-row,
+      .project-grid,
+      .resume-summary,
+      .project-details {
+        grid-template-columns: 1fr;
+      }
+      .nav-inner { justify-content: center; }
+      .nav-links { justify-content: center; }
+      .project-featured,
+      .project-card,
+      .contact-card,
+      .timeline-card,
+      .skill-category,
+      .mini-card {
+        padding: 22px;
+      }
+      .project-head h3 { font-size: 24px; }
+      .hero-title { letter-spacing: -1px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="floating-nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">ZZX</a>
+      <div class="nav-links">
+        <a href="#about">关于</a>
+        <a href="#skills">技能</a>
+        <a href="#experience">经历</a>
+        <a href="#projects">项目</a>
+        <a href="#contact">联系</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero" id="hero">
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>个人简历 / Resume</span>
+      </div>
+      <h1 class="hero-title">周志雄</h1>
+      <p class="hero-subtitle">AI应用工程师 / Agent平台方向</p>
+      <p class="hero-summary">
+        2009年开始从事工程研发，具备17年以上通信、互联网与平台型系统建设经验。职业发展过程中从传统后端研发逐步拓展到 AI 应用落地，能够结合业务场景推进系统从规则化、平台化向智能化演进。
+      </p>
+      <div class="hero-contact">
+        <span>手机：18828095081</span>
+        <span>邮箱：147867565@qq.com</span>
+        <span>英语六级</span>
+        <span>成都</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">查看核心项目</a>
+        <a href="#experience" class="btn btn-secondary">查看工作经历</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">17年+</span>
+          <span class="stat-label">研发经验</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">3</span>
+          <span class="stat-label">核心 AI 项目</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">2009</span>
+          <span class="stat-label">开始工作</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">平台 / AI</span>
+          <span class="stat-label">主要方向</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">ABOUT ME</span>
+        <h2 class="section-title">关于我</h2>
+        <p class="section-desc">一名从传统后端平台研发成长起来的 AI 应用工程师，擅长把复杂业务流程抽象成稳定、可控、可落地的系统能力。</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card about-intro">
+          <div class="about-avatar">周</div>
+          <div class="about-text">
+            <h3>后端研发出身的 AI 应用落地工程师</h3>
+            <p>长期负责复杂业务平台、规则系统与多系统集成建设，近年重点推进作战平台、任务审批系统、任务管理工作台中的 LLM、自然语言生成、Spring AI 编排和智能草稿生成能力落地。</p>
+            <p>擅长 Java 后端开发、业务流程抽象、多系统集成与 AI 应用工程化落地，做事认真务实、推进力强，能够在复杂约束下把方案稳定落到线上。</p>
+            <div class="about-tags">
+              <span class="tag">17年+工程研发经验</span>
+              <span class="tag">Java / Spring Boot</span>
+              <span class="tag">LLM 应用落地</span>
+              <span class="tag">Agent 工作流</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-cards-row">
+          <div class="about-card mini-card">
+            <h4>教育背景</h4>
+            <p><strong>西南民族大学</strong></p>
+            <p>通信工程｜本科</p>
+            <p>2005/9 - 2009/7</p>
+          </div>
+          <div class="about-card mini-card">
+            <h4>职业特质</h4>
+            <ul>
+              <li>方案意识强，能从业务目标反推系统设计</li>
+              <li>推进力稳定，能推动复杂链路落地上线</li>
+              <li>重视质量、可观测性与长期可维护性</li>
+            </ul>
+          </div>
+          <div class="about-card mini-card">
+            <h4>当前聚焦</h4>
+            <ul>
+              <li>AI 应用工程化与流程编排</li>
+              <li>规则系统与模型能力结合落地</li>
+              <li>智能审批、智能配置、智能工作台</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="resume-summary">
+          <div class="resume-summary-card">
+            <h4>职业摘要</h4>
+            <p>长期负责复杂业务平台、规则系统与多系统集成建设，具备从需求分析、方案设计到核心研发落地的完整经验。</p>
+            <p>近年重点推进作战平台、任务审批系统、任务管理工作台中的 LLM、自然语言生成、Spring AI 编排和智能草稿生成能力落地。</p>
+            <p>擅长将复杂业务流程抽象为可执行、可校验、可追溯的系统能力，并推动方案稳定上线。</p>
+          </div>
+          <div class="resume-summary-card">
+            <h4>个人特点</h4>
+            <ul>
+              <li>具备长期平台型系统建设经验</li>
+              <li>能在复杂约束下推进跨系统方案落地</li>
+              <li>重视工程质量、稳定性与可观测治理</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">TECH STACK</span>
+        <h2 class="section-title">技术能力</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>编程语言</h3>
+          <div class="skill-items">
+            <span class="skill-chip expert">Java</span>
+            <span class="skill-chip pro">Python</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>后端与 AI 框架</h3>
+          <div class="skill-items">
+            <span class="skill-chip expert">Spring Boot</span>
+            <span class="skill-chip pro">Spring Cloud</span>
+            <span class="skill-chip pro">Spring AI</span>
+            <span class="skill-chip good">Hibernate</span>
+            <span class="skill-chip good">MyBatis</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>中间件</h3>
+          <div class="skill-items">
+            <span class="skill-chip pro">RocketMQ</span>
+            <span class="skill-chip pro">Kafka</span>
+            <span class="skill-chip pro">Redis</span>
+            <span class="skill-chip good">ZooKeeper</span>
+            <span class="skill-chip good">Thrift</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>数据库与存储</h3>
+          <div class="skill-items">
+            <span class="skill-chip expert">MySQL</span>
+            <span class="skill-chip good">Oracle</span>
+            <span class="skill-chip good">Hive</span>
+            <span class="skill-chip pro">Elasticsearch</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>工程基础</h3>
+          <div class="skill-items">
+            <span class="skill-chip expert">Linux</span>
+            <span class="skill-chip expert">Git</span>
+            <span class="skill-chip pro">微服务架构</span>
+            <span class="skill-chip pro">多系统集成</span>
+            <span class="skill-chip pro">规则治理</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>方向经验</h3>
+          <div class="skill-items">
+            <span class="skill-chip expert">LLM 应用落地</span>
+            <span class="skill-chip pro">Agent 工作流</span>
+            <span class="skill-chip pro">智能审批</span>
+            <span class="skill-chip pro">智能计划生成</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">WORK EXPERIENCE</span>
+        <h2 class="section-title">工作经历</h2>
+      </div>
+
+      <div class="timeline-grid">
+        <div class="timeline-card">
+          <div class="timeline-head">
+            <div class="timeline-title">美团（成都）｜高级软件工程师</div>
+            <div class="timeline-date">2020/9 - 至今</div>
+          </div>
+          <p>负责复杂业务平台与智能化能力建设，主导作战平台、任务审批系统、任务管理工作台等核心项目的方案设计与研发落地。</p>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-head">
+            <div class="timeline-title">咪咕音乐有限公司｜软件工程师</div>
+            <div class="timeline-date">2017/6 - 2020/9</div>
+          </div>
+          <p>负责调度工具、采集工具等平台型系统建设，承担需求分析、产品设计、详细设计、核心开发与生产维护工作。</p>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-head">
+            <div class="timeline-title">诺基亚通信 / 叠拓信息｜软件工程师</div>
+            <div class="timeline-date">2011/5 - 2017/6</div>
+          </div>
+          <p>在通信核心网领域负责 MME 网元研发，承担架构设计、问题定位、性能分析、Sprint 交付与团队培训工作。</p>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-head">
+            <div class="timeline-title">宇信睿智/高伟达信息技术有限公司｜软件工程师</div>
+            <div class="timeline-date">2009/7 - 2011/5</div>
+          </div>
+          <p>从事银行业务系统研发，负责需求实现、模块开发、调试测试与文档输出。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">FEATURED PROJECTS</span>
+        <h2 class="section-title">核心项目</h2>
+        <p class="section-desc">围绕智能配置、智能接入和智能工作台三条主线，把 AI 能力嵌入真实业务流程。</p>
+      </div>
+
+      <div class="project-featured">
+        <div class="project-badge">王牌项目</div>
+        <div class="project-head">
+          <div>
+            <h3>作战平台（AI 配置助手）</h3>
+            <div class="project-meta">时间：2020年9月 - 至今 ｜ 技术栈：Java、Spring Boot、MySQL、Elasticsearch、向量检索、LLM</div>
+          </div>
+          <div class="project-role">核心研发 / AI 方案主R</div>
+        </div>
+        <p class="project-summary">把原本需要手动填写大量配置项、人工筛选指标和编写圈选表达式的任务创建流程，升级为“用一句话描述业务目标，系统自动生成完整可执行计划”的 AI 配置体验。</p>
+        <div class="highlight-grid">
+          <div class="highlight-item"><strong>50%+</strong><span>计划创建提效</span></div>
+          <div class="highlight-item"><strong>60%+</strong><span>直接采纳率</span></div>
+          <div class="highlight-item"><strong>95%+</strong><span>校验通过率</span></div>
+          <div class="highlight-item"><strong>4.0/5.0</strong><span>满意度评分</span></div>
+        </div>
+        <div class="project-tech">
+          <span>自然语言理解</span>
+          <span>知识库检索</span>
+          <span>向量召回</span>
+          <span>规则校验</span>
+          <span>故障降级</span>
+          <span>秒级回滚</span>
+        </div>
+        <div class="project-details">
+          <div class="detail-card">
+            <h4>个人职责</h4>
+            <p>主导 AI 配置助手从 0 到 1 的方案设计与落地，负责搭建“理解需求、检索经验、生成配置、自动纠错”的主流程，并建设历史数据知识库、效果评估体系和线上安全保障机制。</p>
+          </div>
+          <div class="detail-card">
+            <h4>技术方案</h4>
+            <p>围绕“理解意图、查找参考、生成并校验”三步实现，结合关键词检索与向量语义检索召回历史计划、商家标签和指标配置，再由 AI 并行生成配置并经过多轮规则校验与人工确认后完成创建。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-grid">
+        <div class="project-card">
+          <div class="project-head">
+            <div>
+              <h3>外卖 CRM 任务系统（AI 接入助手）</h3>
+              <div class="project-meta">时间：2022年5月 - 至今 ｜ 技术栈：Java、Spring Boot、MySQL、Redis、MQ、Thrift、LLM、向量数据库</div>
+            </div>
+            <div class="project-role">核心研发 / AI 方案主R</div>
+          </div>
+          <p class="project-summary">将原本需要 1 到 2 天、依赖手动配置、写接入代码和人工联调的接入流程，改造成“和 AI 对话即可完成”的智能接入体验。</p>
+          <ul>
+            <li><strong>项目背景：</strong>面向 BD 团队提供统一任务审批能力，解决接入流程依赖手工配置、代码开发和人工联调的问题。</li>
+            <li><strong>个人职责：</strong>主导 AI 接入助手方案设计与落地，覆盖信息收集、方案确认、代码生成、联调测试与内嵌知识问答。</li>
+            <li><strong>技术方案：</strong>围绕“配置引导、知识问答、自动联调”三条主链路建设，支持对话收集配置、自动生成代码和测试环境联调闭环。</li>
+            <li><strong>项目结果：</strong>接入工作压缩到 30 分钟以内完成，显著降低业务接入门槛，减少文档查阅和人工支持依赖。</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <div class="project-head">
+            <div>
+              <h3>任务管理工作台</h3>
+              <div class="project-meta">时间：2023年6月 - 至今 ｜ 技术栈：Java、Spring Boot、Spring AI、MySQL、Redis、LLM、Schema 校验、规则引擎、日志埋点</div>
+            </div>
+            <div class="project-role">核心研发 / AI 方案主R</div>
+          </div>
+          <p class="project-summary">围绕人员维度报表场景，打通问题识别、承接检查、计划草稿生成、日报草稿生成和人工确认主链路，把工作台从报表展示入口升级为智能辅助入口。</p>
+          <ul>
+            <li><strong>项目背景：</strong>面向管理岗建设智能辅助能力，解决报表分析后仍需人工判断责任范围并手工补充计划、日报草稿的问题。</li>
+            <li><strong>个人职责：</strong>主导整体方案设计与落地，推进规则前置判定、Spring AI 编排、样本注入、人工确认和快照留痕等能力建设。</li>
+            <li><strong>技术方案：</strong>采用“规则识别层 + Spring AI 编排层 + 结果治理层”三层方案，保障模型输出可控、可追溯、可稳定上线。</li>
+            <li><strong>项目结果：</strong>实现问题摘要、计划草稿和日报草稿的一键生成，降低人工分析与沟通成本，沉淀统一上下文模型与可观测治理体系。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-card">
+        <h3>联系方式</h3>
+        <p>如果你希望寻找一位兼具传统后端平台经验与 AI 应用落地能力的工程师，我很愿意进一步沟通岗位、团队和业务场景。</p>
+        <div class="contact-links">
+          <span>手机：18828095081</span>
+          <span>邮箱：147867565@qq.com</span>
+          <span>英语：六级，听说读写熟练</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    更新时间：2026年5月
+  </div>
+</body>
+</html>
+    .resume-summary {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .resume-summary-card {
+      padding: 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+    .resume-summary-card h4 {
+      margin: 0 0 14px;
+      font-size: 18px;
+    }
+    .resume-summary-card p,
+    .resume-summary-card li {
+      margin: 0 0 10px;
+      color: var(--text-secondary);
+    }
+    .resume-summary-card ul {
+      margin: 0;
+      padding-left: 18px;
+    }
